@@ -22,7 +22,7 @@
 				<header-4 />
 			</div>
 			<div class="d-flex flex-column justify-start gap-1">
-				<v-switch hide-details value="true" inset dense />
+				<v-switch v-model="bool" hide-details inset dense />
 				<v-switch hide-details inset dense />
 			</div>
 		</div>
@@ -45,7 +45,13 @@
 					</div>
 					<div class="f-12 w-700">Category<span class="red--text">*</span></div>
 					<div class="f-12 w-700">Selected Dates<span class="red--text">*</span></div>
-
+					<div class="d-flex align-center">
+						<v-switch hide-details inset dense />
+						<div class="text--text f-16 w-500 d-flex align-center">08-11-2022</div>
+						<div class="tertiary--text f-10 w-700">
+							<div class="pt-1 ml-1">Monday</div>
+						</div>
+					</div>
 					<div class="f-12 w-700">Extra notes</div>
 					<v-spacer />
 					<div class="d-flex justify-end">
@@ -61,6 +67,9 @@
 export default {
 	name: 'DesignPage',
 	layout: 'design',
+	data() {
+		return { bool: true };
+	},
 };
 </script>
 
@@ -74,3 +83,5 @@ export default {
 	width: fit-content;
 }
 </style>
+
+<style lang="scss"></style>

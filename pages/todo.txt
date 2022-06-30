@@ -1,0 +1,5 @@
+todo:
+
+switch style
+dropdown styling
+text area
