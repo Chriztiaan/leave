@@ -14,6 +14,10 @@
     gap: 16px;
 }
 
+.gap-5 {
+    gap: 20px;
+}
+
 .h-100 {
     height: 100%;
 }
@@ -26,7 +30,7 @@
     padding-top: 4px;
 }
 
-.v-btn {
+.v-btn:not(.v-btn--icon) {
     box-shadow: none !important;
     padding-left: 23px !important;
     padding-right: 23px !important;
@@ -35,3 +39,13 @@
 .v-input--selection-controls__ripple {
     display: none;
 }
+
+.v-main {
+    padding-top: 40px !important;
+}
+
+
+.v-ripple__container {
+	color: var(--v-primary-base) !important;
+}
+

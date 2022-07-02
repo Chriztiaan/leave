@@ -1,5 +1,12 @@
 todo:
 
-switch style
-dropdown styling
-text area
+[X] switch style
+[X] dropdown styling
+[x] dropdown component
+[x] text area
+
+[] Admin layout
+[X] Manage column
+[] Resets (day/month/xxxx)
+
+[] Employees section

@@ -25,12 +25,27 @@
 				<v-switch v-model="bool" hide-details inset dense />
 				<v-switch hide-details inset dense />
 			</div>
+
+			<div class="d-flex flex-column">
+				<dropdown />
+				<br />
+				<dropdown dense />
+			</div>
 		</div>
 		<br />
 
+		<div>
+			<v-btn icon>
+				<v-icon>mdi-home</v-icon>
+			</v-btn>
+			<v-btn icon class="rounded-xl" small>
+				<v-icon color="black">mdi-chevron-down</v-icon>
+			</v-btn>
+		</div>
+
 		<div class="d-flex">
 			<v-card color="white" width="560" height="570" elevation="3">
-				<v-card-text class="d-flex flex-column text--text h-100">
+				<v-card-text class="d-flex flex-column gap-4 text--text h-100">
 					<div class="d-flex align-center">
 						<header-2>Request Time Of</header-2>
 						<v-spacer />
@@ -43,17 +58,33 @@
 							</div>
 						</div>
 					</div>
-					<div class="f-12 w-700">Category<span class="red--text">*</span></div>
-					<div class="f-12 w-700">Selected Dates<span class="red--text">*</span></div>
-					<div class="d-flex align-center">
-						<v-switch hide-details inset dense />
-						<div class="text--text f-16 w-500 d-flex align-center">08-11-2022</div>
-						<div class="tertiary--text f-10 w-700">
-							<div class="pt-1 ml-1">Monday</div>
+					<div>
+						<header-5>Category<required /></header-5>
+						<div>
+							<dropdown />
 						</div>
 					</div>
-					<div class="f-12 w-700">Extra notes</div>
-					<v-spacer />
+					<div>
+						<header-5> Selected Dates<required /></header-5>
+						<div class="d-flex flex-column gap-2">
+							<div v-for="i in 4" :key="i" class="d-flex align-center">
+								<v-switch v-model="bool" hide-details inset dense />
+								<div class="ml-1 text--text f-16 w-500 d-flex align-center">08-11-2022</div>
+								<div class="tertiary--text f-10 w-700">
+									<div class="pt-1 ml-1">Monday</div>
+								</div>
+								<v-spacer />
+								<div style="width: 100px">
+									<dropdown dense :items="[{ label: 'Full' }, { label: 'Half' }, { label: 'None' }]" />
+								</div>
+							</div>
+						</div>
+					</div>
+					<div>
+						<header-5>Extra notes</header-5>
+						<v-textarea rows="3" hide-details no-resize outlined />
+					</div>
+					<v-spacer></v-spacer>
 					<div class="d-flex justify-end">
 						<v-btn color="primary wfc">Request</v-btn>
 					</div>

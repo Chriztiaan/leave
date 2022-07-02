@@ -4,5 +4,5 @@
 	"printWidth": 175,
 	"useTabs": true,
 	"endOfLine": "lf",
-	"semi": true
+	"semi": true,
 }

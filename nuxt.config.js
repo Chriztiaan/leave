@@ -31,7 +31,7 @@ export default {
 
 	// Auto import components: https://go.nuxtjs.dev/config-components
 	components: {
-		dirs: ['~/components', '~/components/text'],
+		dirs: ['~/components', '~/components/text', '~/components/input'],
 	},
 
 	// Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules
@@ -77,9 +77,9 @@ export default {
 					error: '#EFB2B2',
 					success: '#B3EFB2',
 					text: '#28262C',
-
+					subtext: '#ACA8BD',
 					warning: colors.amber.base,
-					info: colors.teal.lighten1,
+					info: '#B2C7EF',
 				},
 			},
 			options: { customProperties: true }, // this line

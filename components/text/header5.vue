@@ -1,6 +1,6 @@
 <template>
-	<div class="f-18 w-500">
-		<slot>Header 3</slot>
+	<div class="f-12 w-700">
+		<slot>Header 5</slot>
 	</div>
 </template>
 

@@ -22,17 +22,22 @@
     font-size: 28px !important;
 }
 
+.w-400 {
+    font-weight: 400   !important;
+}
+
 .w-500 {
-    font-weight: 500;
+    font-weight: 500 !important;
 }
 
 .w-600 {
-    font-weight: 600;
+    font-weight: 600   !important;
 }
 
 .w-700 {
-    font-weight: 700;;
+    font-weight: 700   !important;
 }
+
 
 .v-input--switch.v-input--switch--inset {
     margin-top: 0px !important;
@@ -41,7 +46,7 @@
 }
 
 .v-input--switch--inset .v-input--switch__track {
-	opacity: 0.3 !important;
+	opacity: 0.2 !important;
 }
 
 .v-input--is-label-active.v-input--switch--inset .v-input--switch__track {
@@ -54,3 +59,8 @@
 .v-input--is-label-active.v-input--switch.v-input--dense .v-input--switch__thumb {
 	color: white !important;
 }
+.v-label {
+    color: var(--v-text-base) !important;
+    font-weight: 600 !important;
+    font-size: 12px !important;
+ }

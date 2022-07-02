@@ -14,7 +14,7 @@
     "paths": {
       "@/*": ["./*"]
     },
-    "types": ["@nuxt/types", "@nuxtjs/axios", "@types/node",  "@pinia/nuxt"]
+    "types": ["@nuxt/types", "@nuxtjs/axios", "@types/node",  "@pinia/nuxt", "vuetify"]
   },
   "exclude": ["node_modules", ".nuxt", "dist"]
 }
