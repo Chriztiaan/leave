@@ -45,7 +45,7 @@
 
 		<div class="d-flex">
 			<v-card color="white" width="560" height="570" elevation="3">
-				<v-card-text class="d-flex flex-column gap-4 text--text h-100">
+				<v-card-text class="d-flex flex-column gap-4 text--text height-100">
 					<div class="d-flex align-center">
 						<header-2>Request Time Of</header-2>
 						<v-spacer />
@@ -86,7 +86,7 @@
 					</div>
 					<v-spacer></v-spacer>
 					<div class="d-flex justify-end">
-						<v-btn color="primary wfc">Request</v-btn>
+						<v-btn color="primary">Request</v-btn>
 					</div>
 				</v-card-text>
 			</v-card>
@@ -108,10 +108,6 @@ export default {
 .stat {
 	width: 100px;
 	height: 34px;
-}
-
-.wfc {
-	width: fit-content;
 }
 </style>
 

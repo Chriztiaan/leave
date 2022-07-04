@@ -10,3 +10,8 @@ todo:
 [] Resets (day/month/xxxx)
 
 [] Employees section
+[X] Add employee
+[X] Fnish autocompelte manager list
+[X] Edit employee
+[X] Hook up add/edit buttons
+[] Add cancel button    
