@@ -1,7 +1,7 @@
 <template>
 	<v-app>
 		<v-app-bar flat app color="white" :height="height">
-			<div class="px-12 d-flex flex-column justify-center justify-md-start flex-md-row align-center gap-3" style="width: 100%">
+			<div class="px-12 d-flex flex-column justify-center justify-md-start flex-md-row align-center gap-3 py-4" style="width: 100%">
 				<v-img :src="require(`~/assets/leave.svg`)" max-height="50" max-width="50" />
 				<v-btn class="f-18 w-700" :outlined="isMobile" width="100" text to="/home"> Home </v-btn>
 				<v-btn class="f-18 w-700" :outlined="isMobile" width="100" text to="/design"> Manage </v-btn>
@@ -21,7 +21,7 @@
 				</div>
 			</div>
 		</v-app-bar>
-		<v-main class="text--text">
+		<v-main class="text--text" :class="{ 'main-mobile': isMobile }">
 			<v-main>
 				<v-container> <Nuxt /> </v-container>
 			</v-main>
@@ -43,7 +43,7 @@ export default Vue.extend({
 		},
 		height(): number {
 			if (this.isMobile) {
-				return 200;
+				return 260;
 			} else {
 				return 80;
 			}
@@ -51,3 +51,9 @@ export default Vue.extend({
 	},
 });
 </script>
+
+<style scoped>
+.main-mobile {
+	margin-top: 190px;
+}
+</style>

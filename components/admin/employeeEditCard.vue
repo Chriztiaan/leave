@@ -149,7 +149,7 @@ export default Vue.extend({
 
 .has-content.core-details.role:not(.v-input--is-focused) input {
 	font-weight: 600 !important;
-	color: var(--v-info-base) !important;
+	color: var(--v-subtext-base) !important;
 }
 
 .v-text-field > .v-input__control > .v-input__slot:before {

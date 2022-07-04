@@ -1,9 +1,9 @@
 <template>
 	<v-container>
 		<v-row class="justify-center">
-			<v-col cols="2">
-				<header-1 class="ml-4">Manage</header-1>
-				<div class="mt-4 d-flex flex-column gap-3 manage-btns">
+			<v-col cols="12" md="2" class="d-flex flex-column align-center align-md-start">
+				<header-1 :class="{ 'ml-4': !isMobile }">Manage</header-1>
+				<div class="mt-4 d-flex flex-column align-center align-md-start gap-3 manage-btns">
 					<v-btn text width="180" :class="{ selected: isDashboard }" class="f-18 w-500" @click="setPage(Page.dashboard)">
 						<v-icon class="mr-4" color="tertiary" left size="24">mdi-view-dashboard</v-icon>
 						Dashboard
@@ -22,8 +22,7 @@
 					</v-btn>
 				</div>
 			</v-col>
-			<!-- cols 6 -->
-			<v-col class="" cols="6">
+			<v-col class="" cols="12" md="6">
 				<dashboard v-if="isDashboard" />
 				<work-setup v-else-if="isWorkSetup" />
 				<employees v-else-if="isEmployees" />
@@ -64,6 +63,10 @@ export default Vue.extend({
 		},
 		isRequests(): boolean {
 			return this.selectedPage == Page.requests;
+		},
+		isMobile(): boolean {
+			const name = this.$vuetify.breakpoint.name;
+			return name == 'xs' || name == 'sm';
 		},
 	},
 	methods: {

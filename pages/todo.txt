@@ -14,4 +14,10 @@ todo:
 [X] Fnish autocompelte manager list
 [X] Edit employee
 [X] Hook up add/edit buttons
-[] Add cancel button    
+[X] Add cancel button    
+[X] role to subtext
+
+
+[] Employee requests
+
+[] Mobile support

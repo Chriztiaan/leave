@@ -17,7 +17,7 @@
 
 					<div class="d-flex flex-column rounded-sm ml-5 pb-1">
 						<div class="text--text f-18 w-600 lh-20">Peter John Meyer</div>
-						<div class="info--text f-12 w-600">Backend Developer</div>
+						<div class="subtext--text f-12 w-600">Backend Developer</div>
 						<v-spacer />
 						<div class="mt-2 d-flex gap-4">
 							<div class="d-flex align-center gap-1">
