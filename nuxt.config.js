@@ -31,7 +31,7 @@ export default {
 
 	// Auto import components: https://go.nuxtjs.dev/config-components
 	components: {
-		dirs: ['~/components', '~/components/text', '~/components/input', '~/components/admin'],
+		dirs: ['~/components', '~/components/text', '~/components/input', '~/components/pages/admin', '~/components/chips'],
 	},
 
 	// Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules

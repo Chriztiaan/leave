@@ -1,16 +1,16 @@
 <template>
 	<div>
-		<div class="d-flex width-100">
+		<div class="d-flex width-100 header-section">
 			<header-1 class="primary--text">Employees</header-1>
 			<v-spacer />
-			<v-btn v-if="!employee" height="34" width="156" color="primary" @click="createEmployee">Add Employee</v-btn>
-			<v-btn v-else height="34" width="156" color="error" outlined @click="cancel">Cancel</v-btn>
+			<v-btn v-if="!employee" height="34" width="170" color="primary" @click="createEmployee">Add Employee</v-btn>
+			<v-btn v-else height="34" width="170" color="error" @click="cancel">Cancel</v-btn>
 		</div>
 		<div class="d-flex flex-column gap-4">
 			<div class="mt-2 f-12 w-500 subtext--text" style="max-width: 340px">Add, update or remove employees. and some other info that I am unsure I want to add here.</div>
 			<div class="d-flex flex-wrap justify-space-between gap-row-5">
 				<employee-edit-card v-if="employee" :key="employee.id" v-model="employee" />
-				<v-card v-for="i in 12" :key="i" height="100" width="400" elevation="4" class="d-flex align-center">
+				<v-card v-for="i in 12" :key="i + Math.random()" height="100" width="400" elevation="4" class="d-flex align-center">
 					<v-avatar size="80">
 						<v-img src="https://cdn.vuetifyjs.com/images/lists/2.jpg"></v-img>
 					</v-avatar>
@@ -32,8 +32,8 @@
 					</div>
 					<v-spacer></v-spacer>
 					<div class="actions d-flex align-center gap-2 rounded-sm">
-						<v-btn color="error"><v-icon>mdi-trash-can</v-icon></v-btn>
-						<v-btn color="info" @click="editEmployee"><v-icon>mdi-pencil</v-icon></v-btn>
+						<icon-btn color="error">mdi-trash-can</icon-btn>
+						<icon-btn color="info" @click="editEmployee">mdi-pencil</icon-btn>
 					</div>
 				</v-card>
 			</div>
@@ -80,6 +80,11 @@ export default Vue.extend({
 }
 
 ::v-deep {
+	.header-section .v-btn {
+		font-size: 18px !important;
+		letter-spacing: 0px !important;
+		font-weight: 500 !important;
+	}
 	.v-text-field.v-text-field--enclosed .v-text-field__details,
 	.v-text-field.v-text-field--enclosed > .v-input__control > .v-input__slot {
 		margin: 0;
@@ -102,15 +107,5 @@ export default Vue.extend({
 			font-weight: 400 !important;
 		}
 	}
-}
-
-.actions .v-btn {
-	/* padding: 0 !important; */
-	height: 40px;
-	width: 40px;
-	min-width: 40px;
-	max-width: 40px !important;
-	padding: 0 !important;
-	border-radius: 10px;
 }
 </style>

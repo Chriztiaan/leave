@@ -5,7 +5,7 @@
 				<v-icon color="tertiary" class="mr-2">{{ internalValue.icon }}</v-icon>
 			</template>
 			<template #selection="{ item }">
-				<div :class="textClass">{{ item.label }}</div>
+				<div :class="textClass" class="text--text">{{ item.label }}</div>
 			</template>
 			<template #item="{ item }">
 				<v-icon v-if="item.icon" color="tertiary" class="mr-3">{{ item.icon }}</v-icon>

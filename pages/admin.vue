@@ -26,7 +26,7 @@
 				<dashboard v-if="isDashboard" />
 				<work-setup v-else-if="isWorkSetup" />
 				<employees v-else-if="isEmployees" />
-				<requests v-else-if="isRequests" />
+				<leave-requests v-else-if="isRequests" />
 			</v-col>
 		</v-row>
 	</v-container>
@@ -47,7 +47,7 @@ export default Vue.extend({
 	data() {
 		return {
 			bool: true,
-			selectedPage: Page.employees,
+			selectedPage: Page.requests,
 			Page,
 		};
 	},

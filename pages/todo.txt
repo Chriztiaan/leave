@@ -18,6 +18,14 @@ todo:
 [X] role to subtext
 
 
+[] Extra notes
+[] Full/partial
+
+[] Split vars/style sheets (clown.)
 [] Employee requests
 
+
 [] Mobile support
+[] Minify
+[] google analtyics?
+[] meta tags

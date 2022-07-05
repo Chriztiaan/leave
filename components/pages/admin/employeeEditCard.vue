@@ -1,5 +1,5 @@
 <template>
-	<v-card height="130" width="100%" elevation="4" class="d-flex align-center create-card">
+	<v-card height="130" width="100%" elevation="4" class="d-flex align-center">
 		<v-avatar size="80">
 			<v-img :src="employee.profileUrl ? employee.profileUrl : require(`~/assets/empty-profile.png`)" />
 		</v-avatar>
