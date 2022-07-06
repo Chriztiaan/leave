@@ -8,32 +8,63 @@
 				<count-chip :count="18.5" text="available" count-colour="primary" />
 			</div>
 		</div>
-		<div class="mt-2">
-			<header-5>Category</header-5>
-			<div class="mt-1" style="width: 435px">
-				<dropdown />
-			</div>
-		</div>
-		<div class="mt-5">
-			<header-5> Selected Dates</header-5>
-			<div class="mt-1 d-flex flex-column gap-2" style="width: 435px">
-				<div v-for="i in 4" :key="i" class="mt-1 d-flex align-center">
-					<v-switch v-model="bool" hide-details inset dense />
-					<div class="ml-1 text--text f-16 w-500 d-flex align-center">08-11-2022</div>
-					<div class="tertiary--text f-10 w-700">
-						<div class="pt-1 ml-1" style="margin-left: 4px; padding-bottom: 2px">Monday</div>
+		<div class="width-100 height-100 d-flex justify-space-between">
+			<div>
+				<div class="mt-2">
+					<header-5>Category</header-5>
+					<div class="mt-1" style="width: 435px">
+						<dropdown />
 					</div>
-					<v-spacer />
-					<div style="width: 100px">
-						<dropdown dense :items="[{ label: 'Full' }, { label: 'Half' }, { label: 'None' }]" />
+				</div>
+				<div class="mt-5">
+					<header-5> Selected Dates</header-5>
+					<div class="mt-1 d-flex flex-column gap-2" style="width: 435px">
+						<div v-for="i in 4" :key="i" class="mt-1 d-flex align-center">
+							<v-switch v-model="bool" hide-details inset dense />
+							<div class="ml-1 text--text f-16 w-500 d-flex align-center">08-11-2022</div>
+							<div class="tertiary--text f-10 w-700">
+								<div class="pt-1 ml-1" style="margin-left: 4px; padding-bottom: 2px; min-width: 72px">Wednesday</div>
+							</div>
+							<div class="d-flex align-center gap-2">
+								<dropdown
+									style="width: 100px"
+									dense
+									:items="[
+										{ label: 'Full', class: 'success--text f-12' },
+										{ label: 'Partial', class: 'info--text f-12' },
+										{ label: 'None', class: 'error--text f-12' },
+									]"
+								/>
+
+								<v-text-field
+									v-model.number="daysCount"
+									type="number"
+									class="days-input"
+									style="width: 50px"
+									dense
+									outlined
+									hide-details
+									height="34"
+								></v-text-field>
+								<div class="tertiary--text f-12 w-700">Days</div>
+							</div>
+						</div>
 					</div>
 				</div>
 			</div>
-		</div>
-		<v-spacer />
-		<div class="d-flex justify-end gap-2 width-100 rounded-sm">
-			<v-btn color="error">Decline</v-btn>
-			<v-btn color="secondary">Approve</v-btn>
+			<div>
+				<div class="d-flex flex-column height-100" style="max-width: 300px; width: 300px">
+					<div class="mt-2">
+						<header-5>Extra notes</header-5>
+						<v-textarea placeholder="Any additional info about the leave you are taking" class="mt-1" rows="7" hide-details no-resize outlined />
+					</div>
+					<v-spacer />
+					<div class="d-flex justify-end gap-2 width-100 rounded-sm">
+						<v-btn color="error">Decline</v-btn>
+						<v-btn color="secondary">Approve</v-btn>
+					</div>
+				</div>
+			</div>
 		</div>
 	</v-card>
 </template>
@@ -42,7 +73,41 @@
 import Vue from 'vue';
 export default Vue.extend({
 	data() {
-		return { bool: true };
+		return { daysCount: 1, bool: true };
 	},
 });
 </script>
+
+<style scoped lang="scss">
+.v-textarea::v-deep textarea {
+	margin-bottom: 14px !important;
+}
+
+::v-deep {
+	.v-input--dense.v-text-field.v-text-field--enclosed .v-text-field__details,
+	.v-input--dense.v-text-field.v-text-field--enclosed > .v-input__control > .v-input__slot {
+		max-height: 34px;
+		min-height: 34px !important;
+	}
+
+	.days-input input {
+		font-weight: 400;
+		font-size: 12px;
+		line-height: 34px;
+	}
+
+	.days-input {
+		/* Chrome, Safari, Edge, Opera */
+		input::-webkit-outer-spin-button,
+		input::-webkit-inner-spin-button {
+			-webkit-appearance: none;
+			margin: 0;
+		}
+
+		/* Firefox */
+		input[type='number'] {
+			-moz-appearance: textfield;
+		}
+	}
+}
+</style>

@@ -20,6 +20,7 @@ todo:
 
 [] Extra notes
 [] Full/partial
+[] Days counter, cap length at 3 and value between 0 and 1
 
 [] Split vars/style sheets (clown.)
 [] Employee requests

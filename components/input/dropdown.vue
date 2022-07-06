@@ -5,7 +5,11 @@
 				<v-icon color="tertiary" class="mr-2">{{ internalValue.icon }}</v-icon>
 			</template>
 			<template #selection="{ item }">
-				<div :class="textClass" class="text--text">{{ item.label }}</div>
+				<div :class="textClass" class="text--text">
+					<div :class="item.class">
+						{{ item.label }}
+					</div>
+				</div>
 			</template>
 			<template #item="{ item }">
 				<v-icon v-if="item.icon" color="tertiary" class="mr-3">{{ item.icon }}</v-icon>
@@ -35,8 +39,8 @@ export default Vue.extend({
 		items: {
 			type: Array as PropType<DropdownOption[]>,
 			default: (): DropdownOption[] => [
-				{ label: 'Travel', icon: 'mdi-airplane' },
-				{ label: 'Holiday', icon: 'mdi-home' },
+				{ label: 'Travel', icon: 'mdi-airplane', class: '' },
+				{ label: 'Holiday', icon: 'mdi-home', class: '' },
 			],
 		},
 		value: {
