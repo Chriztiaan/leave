@@ -45,6 +45,7 @@
 									outlined
 									hide-details
 									height="34"
+									@input="updateDayCount"
 								></v-text-field>
 								<div class="tertiary--text f-12 w-700">Days</div>
 							</div>
@@ -56,7 +57,7 @@
 				<div class="d-flex flex-column height-100" style="max-width: 300px; width: 300px">
 					<div class="mt-2">
 						<header-5>Extra notes</header-5>
-						<v-textarea placeholder="Any additional info about the leave you are taking" class="mt-1" rows="7" hide-details no-resize outlined />
+						<v-textarea placeholder="Any additional info about the leave you are taking..." class="mt-1" rows="7" hide-details no-resize outlined />
 					</div>
 					<v-spacer />
 					<div class="d-flex justify-end gap-2 width-100 rounded-sm">
@@ -73,7 +74,17 @@
 import Vue from 'vue';
 export default Vue.extend({
 	data() {
-		return { daysCount: 1, bool: true };
+		return { daysCount: 1, bool: true, oldCount: 1 };
+	},
+	methods: {
+		updateDayCount(): void {
+			if (this.daysCount < 0 || this.daysCount > 1 || this.daysCount.toString().length > 4) {
+				this.$nextTick(() => (this.daysCount = this.oldCount));
+				return;
+			}
+
+			this.oldCount = this.daysCount;
+		},
 	},
 });
 </script>

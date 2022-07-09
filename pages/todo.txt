@@ -18,13 +18,14 @@ todo:
 [X] role to subtext
 
 
-[] Extra notes
-[] Full/partial
-[] Days counter, cap length at 3 and value between 0 and 1
+[X] Extra notes
+[X] Full/partial
+[x] Days counter, cap length at 3 and value between 0 and 1
+[] Leave types
 
 [] Split vars/style sheets (clown.)
 [] Employee requests
-
+[] Cards v-show to improve render time
 
 [] Mobile support
 [] Minify

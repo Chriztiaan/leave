@@ -6,7 +6,7 @@
 		<div class="d-flex flex-column gap-4">
 			<div class="mt-2 f-12 w-500 subtext--text" style="max-width: 340px">Handle any leave requests by employees.</div>
 			<div class="d-flex flex-wrap justify-space-between gap-row-5">
-				<employee-leave-details-card v-if="leave" :key="leave.id" />
+				<employee-leave-details-card v-show="leave" :key="leave.id" />
 				<v-card v-for="i in 12" :key="i" height="70" width="400" elevation="4" class="d-flex align-center">
 					<employee-leave-data name="Peter John Meyer" role="Backend Developer" :count="2.5" />
 

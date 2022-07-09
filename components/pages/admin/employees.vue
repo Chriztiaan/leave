@@ -9,7 +9,7 @@
 		<div class="d-flex flex-column gap-4">
 			<div class="mt-2 f-12 w-500 subtext--text" style="max-width: 340px">Add, update or remove employees. and some other info that I am unsure I want to add here.</div>
 			<div class="d-flex flex-wrap justify-space-between gap-row-5">
-				<employee-edit-card v-if="employee" :key="employee.id" v-model="employee" />
+				<employee-edit-card v-show="employee" v-model="employee" />
 				<v-card v-for="i in 12" :key="i + Math.random()" height="100" width="400" elevation="4" class="d-flex align-center">
 					<v-avatar size="80">
 						<v-img src="https://cdn.vuetifyjs.com/images/lists/2.jpg"></v-img>
