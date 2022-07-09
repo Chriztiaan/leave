@@ -47,7 +47,7 @@ export default Vue.extend({
 	data() {
 		return {
 			bool: true,
-			selectedPage: Page.workSetup,
+			selectedPage: Page.dashboard,
 			Page,
 		};
 	},
