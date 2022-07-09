@@ -50,7 +50,8 @@ export default Vue.extend({
 	},
 	data() {
 		return {
-			selectionValue: this.items[0].label,
+			selectionValue: this.value && this.value.label ? this.value.label : this.items[0].label,
+			// selectionValue: this.items[0].label,
 			internalValue: this.value ? this.value : this.items[0],
 		};
 	},

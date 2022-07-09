@@ -36,17 +36,7 @@
 									]"
 								/>
 
-								<v-text-field
-									v-model.number="daysCount"
-									type="number"
-									class="days-input"
-									style="width: 50px"
-									dense
-									outlined
-									hide-details
-									height="34"
-									@input="updateDayCount"
-								></v-text-field>
+								<number-field style="width: 50px" />
 								<div class="tertiary--text f-12 w-700">Days</div>
 							</div>
 						</div>
@@ -74,17 +64,7 @@
 import Vue from 'vue';
 export default Vue.extend({
 	data() {
-		return { daysCount: 1, bool: true, oldCount: 1 };
-	},
-	methods: {
-		updateDayCount(): void {
-			if (this.daysCount < 0 || this.daysCount > 1 || this.daysCount.toString().length > 4) {
-				this.$nextTick(() => (this.daysCount = this.oldCount));
-				return;
-			}
-
-			this.oldCount = this.daysCount;
-		},
+		return { bool: false };
 	},
 });
 </script>
@@ -99,26 +79,6 @@ export default Vue.extend({
 	.v-input--dense.v-text-field.v-text-field--enclosed > .v-input__control > .v-input__slot {
 		max-height: 34px;
 		min-height: 34px !important;
-	}
-
-	.days-input input {
-		font-weight: 400;
-		font-size: 12px;
-		line-height: 34px;
-	}
-
-	.days-input {
-		/* Chrome, Safari, Edge, Opera */
-		input::-webkit-outer-spin-button,
-		input::-webkit-inner-spin-button {
-			-webkit-appearance: none;
-			margin: 0;
-		}
-
-		/* Firefox */
-		input[type='number'] {
-			-moz-appearance: textfield;
-		}
 	}
 }
 </style>

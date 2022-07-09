@@ -1,5 +1,5 @@
 <template>
-	<div class="f-12 w-700 lh-16">
+	<div class="f-12 w-700 lh-16 header-5">
 		<slot>Header 5</slot>
 	</div>
 </template>

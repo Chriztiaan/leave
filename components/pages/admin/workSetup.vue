@@ -15,43 +15,14 @@
 				<v-switch hide-details inset dense label="Sunday" />
 			</div>
 
-			<header-3>Sick Leave</header-3>
-			<div>
-				<header-5>Type<required /></header-5>
-				<div class="mt-1 mb-2" style="width: 250px">
-					<dropdown
-						dense
-						:items="[
-							{ label: 'Unlimited', icon: 'mdi-infinity' },
-							{ label: 'On Demand', icon: 'mdi-checkbox-multiple-marked' },
-						]"
-					/>
-				</div>
-				<header-5>Resets<required /></header-5>
-				<div class="mt-1 mb-2" style="width: 250px">
-					<dropdown dense :items="[{ label: 'Date goes here?' }]" />
-				</div>
+			<div class="d-flex align-center">
+				<header-3>Leave</header-3>
+				<v-spacer />
+				<v-btn height="34" width="130" color="primary">Add Type</v-btn>
 			</div>
-
-			<header-3>Holiday Leave</header-3>
-			<div>
-				<header-5>Type<required /></header-5>
-				<div class="mt-1 mb-2" style="width: 250px">
-					<dropdown
-						dense
-						:items="[
-							{ label: 'Unlimited', icon: 'mdi-infinity' },
-							{ label: 'On Demand', icon: 'mdi-checkbox-multiple-marked' },
-						]"
-					/>
-				</div>
-				<header-5>Resets<required /></header-5>
-				<div class="mt-1" style="width: 250px">
-					<dropdown dense :items="[{ label: 'Date goes here?' }]" />
-				</div>
+			<div class="d-flex flex-wrap gap-5 justify-space-between">
+				<leave-type-card v-for="i in 3" :key="i" />
 			</div>
-
-			<v-btn class="mt-4" color="secondary" width="250" height="34">Save</v-btn>
 		</div>
 	</div>
 </template>

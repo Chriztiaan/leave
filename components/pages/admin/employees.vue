@@ -1,6 +1,6 @@
 <template>
 	<div>
-		<div class="d-flex width-100 header-section">
+		<div class="d-flex align-center width-100 header-section">
 			<header-1 class="primary--text">Employees</header-1>
 			<v-spacer />
 			<v-btn v-if="!employee" height="34" width="170" color="primary" @click="createEmployee">Add Employee</v-btn>

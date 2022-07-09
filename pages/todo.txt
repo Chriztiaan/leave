@@ -21,7 +21,9 @@ todo:
 [X] Extra notes
 [X] Full/partial
 [x] Days counter, cap length at 3 and value between 0 and 1
-[] Leave types
+[x] Number input field
+[x] Leave types
+[] V show for tabs
 
 [] Split vars/style sheets (clown.)
 [] Employee requests

@@ -23,10 +23,10 @@
 				</div>
 			</v-col>
 			<v-col class="" cols="12" md="6">
-				<dashboard v-if="isDashboard" />
-				<work-setup v-else-if="isWorkSetup" />
-				<employees v-else-if="isEmployees" />
-				<leave-requests v-else-if="isRequests" />
+				<dashboard v-show="isDashboard" />
+				<work-setup v-show="isWorkSetup" />
+				<employees v-show="isEmployees" />
+				<leave-requests v-show="isRequests" />
 			</v-col>
 		</v-row>
 	</v-container>
@@ -47,7 +47,7 @@ export default Vue.extend({
 	data() {
 		return {
 			bool: true,
-			selectedPage: Page.requests,
+			selectedPage: Page.workSetup,
 			Page,
 		};
 	},
