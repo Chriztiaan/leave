@@ -47,7 +47,7 @@ export default Vue.extend({
 	data() {
 		return {
 			bool: true,
-			selectedPage: Page.employees,
+			selectedPage: Page.requests,
 			Page,
 		};
 	},
