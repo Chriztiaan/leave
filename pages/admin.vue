@@ -22,11 +22,11 @@
 					</v-btn>
 				</div>
 			</v-col>
-			<v-col class="" cols="12" md="6">
-				<dashboard v-show="isDashboard" />
-				<work-setup v-show="isWorkSetup" />
-				<employees v-show="isEmployees" />
-				<leave-requests v-show="isRequests" />
+			<v-col class="" cols="12" md="6" style="max-width: 853px">
+				<dashboard v-if="isDashboard" />
+				<work-setup v-else-if="isWorkSetup" />
+				<employees v-else-if="isEmployees" />
+				<leave-requests v-else-if="isRequests" />
 			</v-col>
 		</v-row>
 	</v-container>
@@ -47,7 +47,7 @@ export default Vue.extend({
 	data() {
 		return {
 			bool: true,
-			selectedPage: Page.dashboard,
+			selectedPage: Page.employees,
 			Page,
 		};
 	},

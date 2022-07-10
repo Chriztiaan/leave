@@ -7,8 +7,7 @@ todo:
 
 [] Admin layout
 [X] Manage column
-[] Resets (day/month/xxxx)
-
+[X] Resets (day/month/xxxx)
 [] Employees section
 [X] Add employee
 [X] Fnish autocompelte manager list
@@ -16,20 +15,22 @@ todo:
 [X] Hook up add/edit buttons
 [X] Add cancel button    
 [X] role to subtext
-
-
 [X] Extra notes
 [X] Full/partial
 [x] Days counter, cap length at 3 and value between 0 and 1
 [x] Number input field
 [x] Leave types
-[] V show for tabs
-
-[] Split vars/style sheets (clown.)
-[] Employee requests
-[] Cards v-show to improve render time
+[x] V show for tabs
+[x] Cards v-show to improve render time
 
 [] Mobile support
-[] Minify
+[x] nav bar
+[x] Work setup
+[X] Employees
+[] Leave requests details card
+
+[] Split vars/style sheets (clown.)
+[] Align buttons with page cards?
+
 [] google analtyics?
 [] meta tags

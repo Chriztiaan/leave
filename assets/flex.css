@@ -117,3 +117,7 @@
 .pointer {
     cursor: pointer;
 }
+
+.no-click {
+    pointer-events: none !important;
+}

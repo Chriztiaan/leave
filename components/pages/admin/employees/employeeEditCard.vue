@@ -1,10 +1,10 @@
 <template>
-	<v-card height="130" width="100%" elevation="4" class="">
-		<div class="d-flex align-center height-100 width-100">
-			<v-avatar size="80">
-				<v-img :src="employee.profileUrl ? employee.profileUrl : require(`~/assets/empty-profile.png`)" />
+	<v-card :height="isMobile ? 390 : 130" width="100%" elevation="4">
+		<div class="d-flex flex-column justify-space-between align-center flex-md-row height-100 width-100">
+			<v-avatar min-height="80" min-width="80">
+				<v-img :src="employee.profileUrl ? employee.profileUrl : require(`~/assets/empty-profile.png`)" width="80" height="80" max-height="80" max-width="80" />
 			</v-avatar>
-			<div class="d-flex flex-column rounded-sm pt-2 ml-5 pb-1 pr-4" style="width: 310px">
+			<div class="d-flex flex-column align-center align-md-start rounded-sm pt-2 pb-1 pr-4" :class="isMobile ? '' : 'ml-5'" :style="textInputStyle">
 				<v-text-field
 					v-model="employee.name"
 					:class="{ 'has-content': !!employee.name }"
@@ -18,7 +18,7 @@
 					v-model="employee.role"
 					:class="{ 'has-content': !!employee.role }"
 					class="core-details role"
-					style="min-width: 170px; width: 170px"
+					style="min-width: 230px; width: 230px"
 					hide-details
 					placeholder="Role"
 					dense
@@ -36,7 +36,7 @@
 					</div>
 				</div>
 			</div>
-			<div class="d-flex flex-column mr-5" style="width: 310px; gap: 6px">
+			<div class="d-flex align-center flex-column mr-5" :style="textInputStyle" style="gap: 6px">
 				<div>
 					<v-autocomplete
 						placeholder="Search for a manager"
@@ -77,10 +77,10 @@
 					</v-text-field>
 				</div>
 			</div>
-			<div class="d-flex flex-column manager-setting align-center gap-1">
+			<div class="d-flex flex-column manager-setting align-center gap-1" style="min-width: 150px">
 				<div style="height: 34px" class="width-100 d-flex align-center justify-space-between">
 					<div class="info--text w-700">Manager</div>
-					<v-menu open-on-hover top offset-y>
+					<v-menu v-if="!isMobile" open-on-hover top offset-y>
 						<template #activator="{ on }">
 							<v-icon x-small v-on="on">mdi-information</v-icon>
 						</template>
@@ -93,8 +93,10 @@
 					</v-menu>
 					<v-switch v-model="employee.isManager" hide-details inset dense />
 				</div>
-				<v-btn color="secondary" width="150" height="34">Save</v-btn>
+
+				<v-btn v-if="!isMobile" color="secondary" width="150" height="34">Save</v-btn>
 			</div>
+			<v-btn v-if="isMobile" color="secondary" width="150" height="34">Save</v-btn>
 		</div>
 	</v-card>
 </template>
@@ -102,6 +104,7 @@
 <script lang="ts">
 import Vue, { PropType } from 'vue';
 import { Employee } from '@/models/employee';
+import { isMobile } from '@/utils/screen';
 export default Vue.extend({
 	props: {
 		value: {
@@ -118,6 +121,14 @@ export default Vue.extend({
 			role: '',
 		};
 	},
+	computed: {
+		isMobile(): boolean {
+			return isMobile(this.$vuetify);
+		},
+		textInputStyle(): string {
+			return this.isMobile ? 'width: 100%' : 'width: 310px';
+		},
+	},
 	methods: {
 		managerFilter(item: { name: string; role: string }, queryText: string): boolean {
 			return item.name.toLocaleLowerCase().includes(queryText.toLocaleLowerCase());
@@ -125,6 +136,39 @@ export default Vue.extend({
 	},
 });
 </script>
+
+<style scoped lang="scss">
+.v-card {
+	border-radius: 10px !important;
+	padding-top: 10px !important;
+	padding-bottom: 10px !important;
+	padding-left: 20px !important;
+	padding-right: 20px !important;
+}
+
+::v-deep.v-text-field.v-text-field--enclosed .v-text-field__details,
+::v-deep.v-text-field.v-text-field--enclosed > .v-input__control > .v-input__slot {
+	margin: 0;
+	max-height: 50px;
+	min-height: 50px !important;
+	display: flex !important;
+	align-items: center !important;
+}
+
+::v-deep.v-input--dense.v-text-field.v-text-field--enclosed .v-text-field__details,
+::v-deep.v-input--dense.v-text-field.v-text-field--enclosed > .v-input__control > .v-input__slot {
+	max-height: 34px;
+	min-height: 34px !important;
+}
+
+::v-deep.v-text-field {
+	input,
+	.v-select__selection {
+		color: var(--v-text-base) !important;
+		font-weight: 400 !important;
+	}
+}
+</style>
 
 <style lang="scss">
 .core-details input {

@@ -20,7 +20,7 @@
 				<v-spacer />
 				<v-btn height="34" width="130" color="primary">Add Type</v-btn>
 			</div>
-			<div class="d-flex flex-wrap gap-5 justify-space-between">
+			<div class="d-flex flex-wrap gap-5 justify-center justify-md-space-between">
 				<leave-type-card v-for="i in 3" :key="i" />
 			</div>
 		</div>

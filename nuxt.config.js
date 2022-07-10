@@ -31,7 +31,16 @@ export default {
 
 	// Auto import components: https://go.nuxtjs.dev/config-components
 	components: {
-		dirs: ['~/components', '~/components/text', '~/components/input', '~/components/pages/admin', '~/components/pages/admin/workSetup', '~/components/chips'],
+		dirs: [
+			'~/components',
+			'~/components/text',
+			'~/components/input',
+			'~/components/pages/admin',
+			'~/components/pages/admin/workSetup',
+			'~/components/pages/admin/employees',
+			'~/components/pages/admin/leaveRequests',
+			'~/components/chips',
+		],
 	},
 
 	// Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules
