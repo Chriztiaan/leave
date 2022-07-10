@@ -27,10 +27,12 @@ todo:
 [x] nav bar
 [x] Work setup
 [X] Employees
-[] Leave requests details card
+[X] Leave requests details card
+
+[] Pinia store + axios
+[] Smart parse of models
 
 [] Split vars/style sheets (clown.)
-[] Align buttons with page cards?
 
 [] google analtyics?
 [] meta tags

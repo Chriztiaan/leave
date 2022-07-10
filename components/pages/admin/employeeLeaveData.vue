@@ -1,9 +1,9 @@
 <template>
-	<div class="d-flex align-center gap-0">
+	<div class="d-flex align-center">
 		<v-avatar size="50">
 			<v-img src="https://cdn.vuetifyjs.com/images/lists/2.jpg"></v-img>
 		</v-avatar>
-		<div class="d-flex flex-column rounded-sm ml-2 pb-1" style="max-width: 160px; min-width: 160px">
+		<div class="d-flex flex-column rounded-sm ml-2 pb-1" :style="isMobile ? 'max-width: 140px' : 'max-width: 170px; width: 170px'">
 			<div class="text--text f-18 w-600 lh-20 text-truncate">{{ name }}</div>
 			<div class="subtext--text f-12 w-600 text-truncate">{{ role }}</div>
 		</div>
@@ -17,12 +17,18 @@
 
 <script lang="ts">
 import Vue from 'vue';
+import { isMobile } from '@/utils/screen';
 
 export default Vue.extend({
 	props: {
 		name: { type: String, default: 'Unknwon' },
 		role: { type: String, default: 'None' },
 		count: { type: Number, default: 0 },
+	},
+	computed: {
+		isMobile(): boolean {
+			return isMobile(this.$vuetify);
+		},
 	},
 });
 </script>
