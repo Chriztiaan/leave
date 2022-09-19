@@ -1,0 +1,1 @@
+(window.webpackJsonp=window.webpackJsonp||[]).push([[6],{639:function(n,e,t){"use strict";t.r(e);var l=t(0).default.extend({}),c=t(68),r=t(80),o=t.n(r),w=t(310),component=Object(c.a)(l,(function(){var n=this,e=n.$createElement;return(n._self._c||e)("v-btn",[n._v("Okay")])}),[],!1,null,null,null);e.default=component.exports;o()(component,{VBtn:w.a})}}]);
